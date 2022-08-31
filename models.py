@@ -17,13 +17,13 @@ class Payment(models.Model):
         if self.payment_agent:
             return self.payment_agent
 
-        if self.provider1.filter(type=1).count():
+        if self.provider_one.filter(type=1).count():
             self.payment_agent = u"Provider1"
-        elif self.qprovider2.filter(type=1).count():
+        elif self.qprovider_two.filter(type=1).count():
             self.payment_agent = u"AO Provider2"
-        elif self.provider3.filter(type=1).count():
+        elif self.provider_three.filter(type=1).count():
             self.payment_agent = u"Provider3"
-        elif self.provider4.count():
+        elif self.provider_four.count():
             self.payment_agent = u"Complex Provider 4 Name With Surname"
         else:
             self.payment_agent = u"Provider5 Full Company-Name"
